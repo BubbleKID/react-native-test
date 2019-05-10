@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` _renderItem works correctly 1`] = `
+<ScrollViewMock
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <FlatList
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderBottomWidth": 0,
+        "borderColor": "#ddd",
+        "borderRadius": 2,
+        "borderTopWidth": 0,
+        "borderWidth": 1,
+        "marginLeft": 15,
+        "marginRight": 15,
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</ScrollViewMock>
+`;
+
+exports[`renders correctly 1`] = `null`;

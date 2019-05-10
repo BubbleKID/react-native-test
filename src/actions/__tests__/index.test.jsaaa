@@ -1,0 +1,12 @@
+import setFontSize from '../index';
+
+// describe('actions', () => {
+//   it('should create an action to set a fontsize', () => {
+//     const fontSize = 20;
+//     const expectedAction = {
+//       type: 'SET_FONTSIZE',
+//       fontSize
+//     }
+//     expect(setFontSize(20)).toEqual(expectedAction)
+//   })
+// })
