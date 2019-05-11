@@ -5,7 +5,7 @@ import {
 const defaultImage = require('../assets/images/news.png');
 
 const PostListScreen = (props) => {
-  const _renderItem = ({ item, index }) => (
+  const _renderItem = ({ item, index }) => {console.log(item); return (
     <TouchableOpacity
       activeOpacity={0.5}
       key={index}
@@ -13,7 +13,7 @@ const PostListScreen = (props) => {
       onPress={() => props.navigation.navigate('Detail', { id: item.id })}
     >
       <Image
-        source={item.type_img_mobile_big != null ? { uri: item.type_img_mobile_big } : defaultImage} 
+        source={item.type_img_mobile_big != null ? { uri: item.type_img_mobile_big } : defaultImage}
         style={styles.image}
       />
       <View style={{ flex: 1 }}>
@@ -25,7 +25,7 @@ const PostListScreen = (props) => {
         </Text>
       </View>
     </TouchableOpacity>
-  );
+  );}
 
   const { postData } = props;
   return (

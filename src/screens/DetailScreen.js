@@ -39,7 +39,7 @@ export class DetailScreen extends React.Component {
   }
 
   _toggleSliderVisible = () => {
-    this.setState({ 
+    this.setState({
       sliderDisplay: !this.state.sliderDisplay,
       scrollEnabled: !this.state.scrollEnabled,
       bounce: !this.state.bounce,
@@ -59,6 +59,7 @@ export class DetailScreen extends React.Component {
   };
 
   _renderNode(node, index, siblings, parent, defaultRender){
+    console.log(node)
     if (node.name === 'img'){
       const a = node.attribs
       const { width } = Dimensions.get('window');
@@ -81,21 +82,21 @@ export class DetailScreen extends React.Component {
   render(){
     const { date, title, body } = this.state;
     const { dispatch } = this.props;
-    return ( 
+    return (
       <View style={styles.container}>
         <ScrollView scrollEnabled={this.state.scrollEnabled} bounce={this.state.bounce}>
-          <TouchableWithoutFeedback 
+          <TouchableWithoutFeedback
             onPress={ ()=> this.setState({
               sliderDisplay: false,
               scrollEnabled: true,
             })}
-          >   
-          <View >      
+          >
+          <View >
             <View style={{padding:10}}>
               <Text style={{fontSize: this.props.fontSize + 4, fontWeight: 'bold',marginBottom:10, lineHeight:35}}>{title}</Text>
               <Text style={{fontSize: this.props.fontSize - 4, color: '#808080'}}>{date}</Text>
             </View>
-            <HTMLView 
+            <HTMLView
               value={body}
               onLinkPress={(url) => alert('click link', url)}
               stylesheet={this._createStyleSheet()}
@@ -107,7 +108,7 @@ export class DetailScreen extends React.Component {
           </TouchableWithoutFeedback>
         </ScrollView>
         {
-          this.state.sliderDisplay && 
+          this.state.sliderDisplay &&
           <Slider style={styles.slider}
             minimumValue={10}
             maximumValue={32}
@@ -139,6 +140,6 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
   fontSize: state.fontSize
-}); 
+});
 
 export default connect(mapStateToProps)(DetailScreen);
