@@ -4,7 +4,9 @@ import {
 } from 'react-native';
 import HTMLView from 'react-native-htmlview';
 import axios from 'axios';
-import * as moment from 'moment';
+import moment from 'moment';
+import 'moment/min/moment-with-locales';
+import 'moment/locale/zh-cn';
 import { connect } from 'react-redux';
 import { setFontSize } from '../actions';
 
@@ -59,7 +61,6 @@ export class DetailScreen extends React.Component {
   };
 
   _renderNode(node, index, siblings, parent, defaultRender){
-    console.log(node)
     if (node.name === 'img'){
       const a = node.attribs
       const { width } = Dimensions.get('window');
@@ -82,6 +83,7 @@ export class DetailScreen extends React.Component {
   render(){
     const { date, title, body } = this.state;
     const { dispatch } = this.props;
+
     return (
       <View style={styles.container}>
         <ScrollView scrollEnabled={this.state.scrollEnabled} bounce={this.state.bounce}>

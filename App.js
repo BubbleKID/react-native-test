@@ -6,10 +6,10 @@ import { Provider } from 'react-redux';
 import detailReducer from './src/reducers'
 
 const AppContianer = createAppContainer(AppNavigator);
+const store = createStore(detailReducer);
 
 export default class App extends React.Component {
   render() {
-    const store = createStore(detailReducer);
     return(
       <Provider store={store}>
         <AppContianer />

@@ -2,13 +2,13 @@ import React from 'react';
 import {
   Text, View, Image, TouchableOpacity, FlatList, ScrollView, StyleSheet,
 } from 'react-native';
+
 const defaultImage = require('../assets/images/news.png');
 
 const PostListScreen = (props) => {
-  const _renderItem = ({ item, index }) => {console.log(item); return (
+  const _renderItem = ({ item, index }) => (
     <TouchableOpacity
       activeOpacity={0.5}
-      key={index}
       style={styles.item}
       onPress={() => props.navigation.navigate('Detail', { id: item.id })}
     >
@@ -25,7 +25,7 @@ const PostListScreen = (props) => {
         </Text>
       </View>
     </TouchableOpacity>
-  );}
+  );
 
   const { postData } = props;
   return (
@@ -34,6 +34,7 @@ const PostListScreen = (props) => {
         data={postData}
         renderItem={_renderItem}
         style={styles.flatList}
+        keyExtractor={item => item.id.toString()}
       />
     </ScrollView>
   );

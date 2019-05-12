@@ -2,8 +2,8 @@ import 'react-native';
 import React from 'react';
 import PostList from '../PostList';
 import renderer from 'react-test-renderer';
-import { shallow, mount } from 'enzyme';
-import { TouchableOpacity, FlatList } from 'react-native';
+import { shallow } from 'enzyme';
+import { FlatList } from 'react-native';
 
 it('renders correctly', () => {
   const tree = renderer.create(<PostList />).toJSON();
@@ -13,7 +13,6 @@ it('renders correctly', () => {
 
 it(' _renderItem works correctly', ()=>{
   const data = {item:{id:1,type_img_mobile_big: 'aaa', title:{rendered:'123'}}};
-
   const onPressEvent = jest.fn();
   const navigationEvent = jest.fn();
   const navigation = {

@@ -14,7 +14,6 @@ export default class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({postData:[111]})
     axios.get('https://staging.allfin.com/wordpress/wp-json/wp/v2/posts?page=1&per_page=10')
     .then((response) => {
       this.setState({ postData: response.data });

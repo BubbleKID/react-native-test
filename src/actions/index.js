@@ -1,4 +1,6 @@
-export const setFontSize = val => ({
-  type: 'SET_FONTSIZE',
-  fontSize: val,
-});
+export function setFontSize(val){
+  return{
+    type: 'SET_FONTSIZE',
+    fontSize: val,
+  }
+};
